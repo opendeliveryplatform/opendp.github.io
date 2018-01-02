@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<section class="author">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Author Profile</h2>
+      </div>
+    </div>
+    {% include author_bio.html author=page %}
+    <div class="row">
+      <div class="col-md-9 col-md-offset-3">
+        <h3>Blog Posts</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9 col-md-offset-3">
+        <ul>
+          {% assign posts = site.posts | where:"author",author.username %}
+          {% for post in posts %}
+          <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> {{ post.date | date_to_string  }}</li>
+          {% endfor %}
+          {% if posts.size == 0 %}
+          <li>No Posts found.</li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

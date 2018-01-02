@@ -11,5 +11,35 @@ github_username:
 # Build settings
 markdown: kramdown
 
+# Permanent Links
+permalink: /blog/:year/:month/:day/:title
+
+# Pagination
+paginate: 5
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+paginate_path: "/blog/page:num/"
+
 sass:
   sass_dir: _saas
+
+# Collections
+collections:
+  authors:
+    output: true
+    permalink: /authors/:path/
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author_profile"
+

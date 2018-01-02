@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  {% include head.html %}
+
+  <body class="body-blog">
+    {% include nav-default.html %}
+    <section>
+      <div class="container blog">
+          <div class="row">
+            <div class="col-sm-9 col-sm-push-3">
+              {{content}}
+            </div>
+            <div class="col-sm-3 col-sm-pull-9">
+              <h3>Lorem Ipsum</h3>
+              Lorem Ipsum
+            </div>
+          </div>
+      </div>
+    </section>
+    {% include scripts.html %}
+    {% include footer.html %}
+    </body>
+</html>
