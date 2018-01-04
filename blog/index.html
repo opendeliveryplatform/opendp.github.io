@@ -3,32 +3,29 @@ layout: blog
 path: /blog/index.html
 ---
 <h2>Blog Posts</h2>
-<div class="home">
-  <ul class="post-list">
-    {% for post in paginator.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date_to_string  }}</span>
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        {{ post.excerpt }}
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Mehr <i class="fa fa-arrow-circle-o-right"></i></a>
-        <br/><br/>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
-
+<ul class="post-list">
+  {% for post in paginator.posts %}
+    <li>
+      <span>{{ post.date | date_to_string  }}</span>
+      <h2>
+        <a href="{{ post.url | prepend: site.baseurl | prepend: site.url}}">{{ post.title }}</a>
+      </h2>
+      {{ post.excerpt }}
+      <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">More <i class="fas fa-arrow-alt-circle-right "></i></a>
+      <br/><br/>
+    </li>
+  {% endfor %}
+</ul>
 <nav id="pagination">
   <ul class="pager">
     {% if paginator.next_page %}
-      <li class="next"><a href="{{ paginator.next_page_path }}" title="Ältere Beiträge">Ältere Beiträge &rarr;</a></li>
+      <li class="next"><a href="{{ paginator.next_page_path }}" title="Older Posts">Older Posts &rarr;</a></li>
     {% endif %}
     {% if paginator.previous_page %}
       {% if paginator.previous_page == 1 %}
-        <li class="previous"><a href="/blog/index.html" title="Neuere Beiträge">&larr; Neuere Beiträge</a></li>
+        <li class="previous"><a href="{{site.url}}{{site.baseurl}}/blog/index.html" title="Newer Posts">&larr; Newer Posts</a></li>
       {% else %}
-        <li class="previous"><a href="{{ paginator.previous_page_path }}" title="Neuere Beiträge">&larr; Neuere Beiträge </a></li>
+        <li class="previous"><a href="{{ paginator.previous_page_path }}" title="Newer Posts">&larr; Newer Posts</a></li>
       {% endif %}
     {% endif %}
   </ul>

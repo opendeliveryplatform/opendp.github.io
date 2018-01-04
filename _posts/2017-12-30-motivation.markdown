@@ -1,15 +1,17 @@
 ---
 layout: post
-title: "Motivation"
+title: "Motivation for OpenDP"
 category: misc
 date: "2017-12-30 21:00:28 +0100"
 author: richard.attermeyer
 ---
-Just kicking of the new open delivery project at the end of the year.
+I am just kicking off the new open delivery project at the end of the year.
 I've been working ont this project for some time in my spare time.
 Before I changed position in my company during summer, I was very much
 involved in building continuous delivery platforms for different customers.
-The last one involved the automation of deployment of the Atlassian stack into
+
+### Provisioning App
+The last project involved the deployment automation of an Atlassian stack into
 an Amazon AWS VPC and developing a provisioning app.
 This provisioning app allows to create the required resources
 (Confluence spaces, Jira Project, Bitbucket projects and repositories
@@ -19,7 +21,8 @@ have access from the internet within 5 minutes.
 So the provisioning app development also included development of template / quickstarter
 projects for the defined stack (Angular frontend, Node.JS Backend, Spring Boot Backend, rstudio).
 Openshift was not directly part of the game, because it was provided as a Red Hat managed service.
-
+<!--more-->
+### Custom built CD platform
 Before that, I was working on getting 24 developers on a docker based self-hosted
 continuous delivery cluster. We started before the docker hype really was starting off
 and decided to roll our own solution first, then Docker Swarm and Overlay
@@ -30,6 +33,7 @@ Gitlab, Atlassian (Confluence, Jira), that was hosted centrally by different tea
 But our stack and the work we performed lead administrators to request that
 new projects must deliver docker images and a property file to get deployed from 2018.
 
+### The platform team
 Until this summer, I had my hands on the infrastructure for 3 days / week.
 The other 2 days were already filled with what some people would call management.
 This has shifted. I am now in a management position. Probably having a chance (among other things),
@@ -42,6 +46,7 @@ The platform is managed by a "platform team", located in a different city, not s
 team that has the need for the first real business application on the platform, ...
 Not an ideal solution.
 
+### A DevOps Approach
 In my opinion, it is crucial, that development teams (I am talking of dev team of around 20-50 developers),
 develop the capability to manage such a platform on their own.
 I am also convinced, that there will not be a single platform to address the needs
@@ -54,6 +59,7 @@ for your developers is also a production environment (for your developers).
 You first need to understand the needs and processes around delivering software
 for your company, team or project.
 
+### Current State of OpenDP
 So, currently, I try to develop the documentation and push the technological
 base forward.
 Currently, most basic components of the "runtime environmet" (more on the domains later in the documentation, or (in German) on the [cattlecrew blog](https://thecattlecrew.net/2017/11/16/das-ganze-ist-mehr-als-seine-teile/)).
@@ -74,6 +80,7 @@ What is currently deployed
   - node_exporter
 * a pki (creating TLS certificates)
 
+### Missing Features
 But a lot of features are missing
 
 * Graylog should be configured correctly automatically, so  it directly can receive logs

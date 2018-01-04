@@ -2,8 +2,9 @@
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url('../img/header.jpg');
+  background-image: url('../img/banner.jpg');
   background-position: center center;
+  color: $gray-700;
   @include background-cover;
   hr {
     margin-top: 30px;
@@ -21,9 +22,9 @@ header.masthead {
     }
   }
   @media (min-width: 992px) {
-    height: 100vh;
+    height: 80vh;
     min-height: 650px;
-    padding-top: 0;
+    padding-top: 10rem;
     padding-bottom: 0;
     h1 {
       font-size: 3rem;
