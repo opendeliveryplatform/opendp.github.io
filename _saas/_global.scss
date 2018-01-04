@@ -94,17 +94,3 @@ body {
   text-align: justify;
 }
 
-#contact .fa-twitter {
-    color: $primary;
-    &:hover {
-      background: $white;
-    }
-}
-
-#contact .fa-envelope {
-  color: $primary;
-  &:hover {
-    background: $white;
-    color: $primary;    
-  }
-}
